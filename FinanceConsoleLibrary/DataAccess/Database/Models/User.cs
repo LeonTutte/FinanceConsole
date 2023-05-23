@@ -1,3 +1,5 @@
+#pragma warning disable CS8618
+
 namespace FinanceConsoleLibrary.DataAccess.Database.Models;
 
 public class User
