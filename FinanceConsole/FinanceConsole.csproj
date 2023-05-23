@@ -9,6 +9,7 @@
     <Authors>Leon Tutte</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <ApplicationIcon>resources\icons\piggy-bank-512.ico</ApplicationIcon>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,6 +19,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

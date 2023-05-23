@@ -1,5 +1,8 @@
 # FinanceConsole
 
+![latest build](https://github.com/LeonTutte/FinanceConsole/actions/workflows/dotnet.yml/badge.svg)
+![security](https://github.com/LeonTutte/FinanceConsole/actions/workflows/codeql.yml/badge.svg)
+
 Easy home banking for individuals directly on the console. No unnecessary buttons or distracting elements.
 
 ## Features:
