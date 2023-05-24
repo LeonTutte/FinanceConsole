@@ -22,6 +22,7 @@ public static class ConfigurationModule
         {
             LogModule.WriteError("settings file not accessible");
         }
+
         return new IniData();
     }
 }

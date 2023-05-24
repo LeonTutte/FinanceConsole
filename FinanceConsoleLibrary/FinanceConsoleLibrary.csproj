@@ -11,40 +11,40 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-      <DebugType>full</DebugType>
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+        <DebugType>full</DebugType>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-      <DebugType>none</DebugType>
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+        <DebugType>none</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="DataAccess\Database\Modules\Static\" />
-      <Folder Include="Modules\Instance\" />
+        <Folder Include="DataAccess\Database\Modules\Static\"/>
+        <Folder Include="Modules\Instance\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
-      <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Serilog" Version="2.12.0" />
-      <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1"/>
+        <PackageReference Include="ini-parser-netstandard" Version="2.5.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Serilog" Version="2.12.0"/>
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="settings.ini">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Update="settings.ini">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>

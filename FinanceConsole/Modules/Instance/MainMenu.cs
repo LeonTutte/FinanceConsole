@@ -1,3 +1,4 @@
+using FinanceConsole.Modules.Static;
 using FinanceConsoleLibrary.DataAccess.Database.Models;
 using Spectre.Console;
 
@@ -7,8 +8,6 @@ public class MainMenu
 {
     private string? _lastConsoleInput;
     private ConsoleKey? _lastConsoleKey;
-    private Account? _selectedAccount;
-    private Transaction? _selectedTransaction;
     private User? _selectedUser;
 
     public void OpenMenu()
@@ -20,12 +19,17 @@ public class MainMenu
             CreateSelectedStatusTable();
             AnsiConsole.Markup("");
             AnsiConsole.MarkupLine("--- [green]Please choose an action[/] ---");
-            AnsiConsole.WriteLine("A: Create new user");
-            AnsiConsole.WriteLine("B: Login as user");
+            if (_selectedUser == null)
+            {
+                AnsiConsole.WriteLine("A: Create new user");
+                AnsiConsole.WriteLine("B: Login as user");
+            }
+
             if (_selectedUser != null)
             {
                 AnsiConsole.WriteLine("C: Select account");
                 AnsiConsole.WriteLine("D: Select transaction");
+                AnsiConsole.WriteLine("E: End Session / Logout");
             }
 
             AnsiConsole.MarkupLine("--- [grey]Quit by pressing Q[/] ---");
@@ -34,6 +38,15 @@ public class MainMenu
             switch (_lastConsoleKey)
             {
                 case ConsoleKey.Q:
+                    break;
+                case ConsoleKey.A:
+                    _selectedUser = UserModule.CreateNewUser();
+                    break;
+                case ConsoleKey.B:
+                    _selectedUser = UserModule.Login();
+                    break;
+                case ConsoleKey.E:
+                    _selectedUser = null;
                     break;
                 default:
                     AnsiConsole.Markup("[red]Invalid Input![/]");
@@ -59,6 +72,8 @@ public class MainMenu
 
     private void CreateSelectedStatusTable()
     {
+        if (_selectedUser == null && _selectedAccount == null && _selectedTransaction == null) return;
+
         var table = new Table();
 
         table.AddColumn("User");
@@ -78,4 +93,8 @@ public class MainMenu
         AnsiConsole.Write(table);
         AnsiConsole.Markup("");
     }
+#pragma warning disable CS0649
+    private Account? _selectedAccount;
+    private Transaction? _selectedTransaction;
+#pragma warning restore CS0649
 }

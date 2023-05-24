@@ -23,16 +23,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="resources\icons\piggy-bank-512.ico" />
+    <Content Include="resources\icons\piggy-bank-512.ico"/>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Spectre.Console" Version="0.47.0" />
+    <PackageReference Include="Spectre.Console" Version="0.47.0"/>
     <PackageReference Include="Spectre.Console.Analyzer" Version="0.47.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinanceConsoleLibrary\FinanceConsoleLibrary.csproj" />
+    <ProjectReference Include="..\FinanceConsoleLibrary\FinanceConsoleLibrary.csproj"/>
   </ItemGroup>
 
 </Project>

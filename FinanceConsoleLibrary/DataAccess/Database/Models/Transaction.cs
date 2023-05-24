@@ -13,6 +13,6 @@ public class Transaction
     public DateTime BookingDate { get; set; }
     public DateTime ValueDate { get; set; }
     public ushort BaseAccountId { get; set; }
-    
+
     public virtual Account BaseAccount { get; set; }
 }

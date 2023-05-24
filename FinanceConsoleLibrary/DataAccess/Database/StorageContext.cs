@@ -1,26 +1,25 @@
 using FinanceConsoleLibrary.DataAccess.Database.Models;
 using FinanceConsoleLibrary.Modules.Static;
-using IniParser.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceConsoleLibrary.DataAccess.Database;
 
 public class StorageContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
-    public DbSet<Account> Accounts { get; set; }
-    public DbSet<Transaction> Transactions { get; set; }
-    
     public StorageContext()
     {
         LogModule.WriteDebug("Initializing storageContext");
     }
 
+    public DbSet<User> Users { get; set; }
+    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // TODO: Add password to connection string
         LogModule.WriteDebug("Configuring storageContext");
-        IniData settingsData = ConfigurationModule.GetConfiguration();
+        var settingsData = ConfigurationModule.GetConfiguration();
         LogModule.WriteDebug("Building connection string for storageContext");
         var connectionString = $"Data Source={settingsData["Database"]["Filename"]};";
         optionsBuilder.UseSqlite(connectionString);
@@ -51,7 +50,7 @@ public class StorageContext : DbContext
             .HasMany<Account>(x => x.Accounts)
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId);
-        
+
         // Account
         modelBuilder.Entity<Account>()
             .HasKey(nameof(Account.Id));
@@ -68,7 +67,7 @@ public class StorageContext : DbContext
             .HasOne<User>(x => x.User)
             .WithMany(x => x.Accounts)
             .HasForeignKey(x => x.UserId);
-        
+
         // Transaction
         modelBuilder.Entity<Transaction>()
             .HasKey(nameof(Transaction.Id));

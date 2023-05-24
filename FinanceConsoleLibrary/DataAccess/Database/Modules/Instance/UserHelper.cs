@@ -40,7 +40,7 @@ public class UserHelper
         {
             Label = label,
             LoginName = loginName,
-            PasswordHash = password
+            PasswordHash = passwordHash
         });
 
         try
