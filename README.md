@@ -8,7 +8,7 @@ Easy home banking for individuals directly on the console. No unnecessary button
 ## Features:
 - Easy operation with the console
 - Multiple users and accounts per installation
-- Easy backup via file/data directory
+- Easy backup via one database-file
 - and much more ...
 
 ## Technical information:
