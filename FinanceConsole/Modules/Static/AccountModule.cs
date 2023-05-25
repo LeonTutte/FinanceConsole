@@ -19,7 +19,7 @@ public static class AccountModule
 
         var account = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
-                .Title("What's your [green]favorite fruit[/]?")
+                .Title("Please choose an [green]account[/]?")
                 .PageSize(10)
                 .MoreChoicesText("[grey](Move up and down to reveal more accounts)[/]")
                 .AddChoices("New", "None")

@@ -21,6 +21,7 @@ public class AccountHelper
         var storageContext = new StorageContext();
         storageContext.Database.EnsureCreated();
 
+        storageContext.Users.Attach(user);
         var tempAccount = storageContext.Accounts.Add(new Account
         {
             Label = label,
