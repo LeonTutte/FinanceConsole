@@ -63,7 +63,7 @@ public class StorageContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<Account>()
             .Property(nameof(Account.Iban))
-            .IsRequired()
+            .IsRequired(false)
             .IsUnicode(false)
             .HasMaxLength(128);
         modelBuilder.Entity<Account>()
