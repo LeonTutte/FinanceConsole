@@ -18,6 +18,6 @@ public class Transaction
 
     public override string ToString()
     {
-        return $"{BaseAccount.Label}:{BaseAccount.Iban} -> {Target}:{TargetIban} <<< {AmountInCent / 100}€";
+        return $"{BaseAccount.Label}:{BaseAccount.Iban} -> {Target}:{TargetIban} <<< {(double)AmountInCent / 100:N2}€";
     }
 }

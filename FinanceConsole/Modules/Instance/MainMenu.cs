@@ -49,6 +49,9 @@ public class MainMenu
                 case ConsoleKey.C:
                     _selectedAccount = AccountModule.Select(_selectedUser);
                     break;
+                case ConsoleKey.D:
+                    _selectedTransaction = TransactionModule.Select(_selectedAccount, _selectedUser);
+                    break;
                 case ConsoleKey.E:
                     _selectedUser = null;
                     break;
