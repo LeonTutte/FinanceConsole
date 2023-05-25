@@ -3,6 +3,7 @@ using System;
 using FinanceConsoleLibrary.DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinanceConsoleLibrary.Migrations
 {
     [DbContext(typeof(StorageContext))]
-    partial class StorageContextModelSnapshot : ModelSnapshot
+    [Migration("20230525083420_AccountIban")]
+    partial class AccountIban
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
@@ -41,7 +44,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Accounts", (string)null);
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.Transaction", b =>
@@ -90,7 +93,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasIndex("BaseAccountId");
 
-                    b.ToTable("Transactions", (string)null);
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.User", b =>
@@ -119,7 +122,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.Account", b =>

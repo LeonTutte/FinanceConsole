@@ -63,9 +63,9 @@ public class StorageContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<Account>()
             .Property(nameof(Account.Iban))
-            .IsRequired()
             .IsUnicode(false)
-            .HasMaxLength(128);
+            .HasMaxLength(128)
+            .IsRequired(false);
         modelBuilder.Entity<Account>()
             .HasMany<Transaction>(x => x.Transactions)
             .WithOne(x => x.BaseAccount)

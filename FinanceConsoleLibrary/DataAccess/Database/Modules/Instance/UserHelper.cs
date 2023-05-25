@@ -1,6 +1,6 @@
-using System.Transactions;
 using FinanceConsoleLibrary.DataAccess.Database.Models;
 using FinanceConsoleLibrary.Modules.Static;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanceConsoleLibrary.DataAccess.Database.Modules.Instance;
 
@@ -49,7 +49,7 @@ public class UserHelper
             User = tempUser.Entity;
             return true;
         }
-        catch (TransactionException e)
+        catch (DbUpdateException e)
         {
             LogModule.WriteError("Could not save user!");
             LogModule.WriteError(e.Message);
