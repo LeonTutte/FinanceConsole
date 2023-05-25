@@ -51,8 +51,7 @@ public class UserHelper
         }
         catch (TransactionException e)
         {
-            LogModule.WriteError("Could not save user!");
-            LogModule.WriteError(e.Message);
+            LogModule.WriteError("Could not save user!", e);
             return false;
         }
     }
