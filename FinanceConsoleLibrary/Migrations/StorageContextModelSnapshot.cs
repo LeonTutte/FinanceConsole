@@ -23,11 +23,6 @@ namespace FinanceConsoleLibrary.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Iban")
-                        .HasMaxLength(128)
-                        .IsUnicode(false)
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Label")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -41,7 +36,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Accounts", (string)null);
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.Transaction", b =>
@@ -90,7 +85,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasIndex("BaseAccountId");
 
-                    b.ToTable("Transactions", (string)null);
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.User", b =>
@@ -119,7 +114,7 @@ namespace FinanceConsoleLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("FinanceConsoleLibrary.DataAccess.Database.Models.Account", b =>
