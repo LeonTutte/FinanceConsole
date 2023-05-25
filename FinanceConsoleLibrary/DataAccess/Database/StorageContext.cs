@@ -6,7 +6,9 @@ namespace FinanceConsoleLibrary.DataAccess.Database;
 
 public class StorageContext : DbContext
 {
+#pragma warning disable CS8618
     public StorageContext()
+#pragma warning restore CS8618
     {
         LogModule.WriteDebug("Initializing storageContext");
     }
@@ -56,6 +58,11 @@ public class StorageContext : DbContext
             .HasKey(nameof(Account.Id));
         modelBuilder.Entity<Account>()
             .Property(nameof(Account.Label))
+            .IsRequired()
+            .IsUnicode(false)
+            .HasMaxLength(128);
+        modelBuilder.Entity<Account>()
+            .Property(nameof(Account.Iban))
             .IsRequired()
             .IsUnicode(false)
             .HasMaxLength(128);
