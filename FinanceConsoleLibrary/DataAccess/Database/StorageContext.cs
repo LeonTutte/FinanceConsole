@@ -103,10 +103,10 @@ public class StorageContext : DbContext
             .HasMaxLength(1024);
         modelBuilder.Entity<Transaction>()
             .Property(nameof(Transaction.BookingDate))
-            .IsRequired();
+            .IsRequired(false);
         modelBuilder.Entity<Transaction>()
             .Property(nameof(Transaction.ValueDate))
-            .IsRequired();
+            .IsRequired(false);
         modelBuilder.Entity<Transaction>()
             .HasOne<Account>(x => x.BaseAccount)
             .WithMany(x => x.Transactions)
