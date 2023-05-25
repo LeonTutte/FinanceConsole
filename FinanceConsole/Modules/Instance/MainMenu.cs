@@ -38,12 +38,16 @@ public class MainMenu
             switch (_lastConsoleKey)
             {
                 case ConsoleKey.Q:
+                    AnsiConsole.Clear();
                     break;
                 case ConsoleKey.A:
                     _selectedUser = UserModule.CreateNewUser();
                     break;
                 case ConsoleKey.B:
                     _selectedUser = UserModule.Login();
+                    break;
+                case ConsoleKey.C:
+                    _selectedAccount = AccountModule.Select(_selectedUser);
                     break;
                 case ConsoleKey.E:
                     _selectedUser = null;
